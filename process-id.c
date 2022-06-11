@@ -27,6 +27,7 @@ int main(int argc,char* argv[]){
     // to start while booting and last daemon to terminate during shutdown,
     // its pid = 1;
 
+//comment the code below to see the zombie process allocation to systemd as child, above----
     int res=wait(NULL);
     if(res==-1){
         printf("Process with id of %d has no child process currently!\n",getpid());
