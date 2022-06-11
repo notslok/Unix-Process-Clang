@@ -24,8 +24,7 @@ int main(int argc, char* argv[]){
         //!!!Note: just wait(); willgive too few args error!!!
         wait(NULL);
         //just holds the current process until its child finishes.
-        //!!! If in case it is called in a process which has no child then 
-        //it will result in a deadlock at this point !!!
+        //!!! returns the finished child process id if child exists otherwise return -1.
     }
     for(int i=number;i<number+5;i++){
         printf("%d ",i);
