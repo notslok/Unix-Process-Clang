@@ -4,7 +4,7 @@
 //$ gcc exec.c -o execping
 //$ ./execping
 /*-------------------------------------------------------------*/
-#define _GNU_SOURCE
+#define _GNU_SOURCE //...for execvpe() implicit declaration error...
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
