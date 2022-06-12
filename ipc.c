@@ -15,7 +15,8 @@ $ ./a.out
 #include<unistd.h>//fork() & pipe()
 #include<sys/wait.h>//wait()
 #include<errno.h>
-
+//-----------------------------
+//!!! NOTE: as per observation it seems...functions are also copied into child processess.        
 int return_sum(int *arr,int start_idx,int end_idx){
     int sum=0;
     for(int i = start_idx;i < end_idx;i++){
@@ -44,7 +45,7 @@ int main(int argc, char* argv[]){
     //
     if(id == 0){
         close(fd[0]);
-        int child_sum=return_sum(arr,0,pivot);
+        int child_sum=return_sum(arr,0,pivot); //!!! NOTE: as per observation it seems...functions are also copied into child processess.
         
         if(write(fd[1],&child_sum,sizeof(int)) == -1){
             printf("Error while writting into the buffer!\n");
