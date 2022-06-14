@@ -11,12 +11,12 @@
 
 
 int main(int argc, char* argv[]){
-    int id = fork();
-    if(id==-1){
+    int pid = fork();
+    if(pid==-1){
         return 1;
     }
 
-    if(id == 0){
+    if(pid == 0){
         int myFile = open("ping.txt", O_WRONLY | O_CREAT, 0777); // O_CREAT -> create file if it doent exist already
         dup2(myFile, STDOUT_FILENO);//assigns stdout file discriptor to our file
         close(myFile);
