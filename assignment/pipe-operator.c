@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
     if(pid_grep == 0){//child process to handle "grep"
         dup2(fd[0],STDIN_FILENO);//"duplicating and replacing" read end of custom file descriptor, so that the stdin file descriptor points to our custom file descriptor's read end
         //closing this child's file descriptors 
-        clode(fd[1]);
+        close(fd[1]);
         close(fd[0]);
         //exec lp below will now be taking input from the read end of our custom pipe
         execlp("grep","grep","rtt",NULL);//search for the keywork "rtt" in input(read end of custom file descriptor)
