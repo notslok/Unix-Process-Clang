@@ -1,6 +1,9 @@
 # Unix-Process-Clang
 My Independent "In-depth" exploration into the practical implementations of unix processes.
 
+
+![Screenshot from 2022-06-20 11-15-58](https://user-images.githubusercontent.com/53101134/174533391-61f53daf-f685-4874-a9cf-5680e639fdb2.png)
+
 ## Concepts Covered:
 * exec() function family.
 * Inter-Process Communication (IPC)
